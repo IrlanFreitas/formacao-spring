@@ -1,0 +1,11 @@
+Tipos de repositórios
+
+Repository
+CRUD Repository (extends Repository)
+PaginationAndSorting Repository (extends CRUD Repository)
+JPA Repository (extends PaginationAndSorting Repository)
+
+
+Injeção de Dependência (Grande feature do Spring)
+
+SpringDataApplication USA CargoRepository (Interface)

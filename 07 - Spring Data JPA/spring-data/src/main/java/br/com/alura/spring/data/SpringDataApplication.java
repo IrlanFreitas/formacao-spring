@@ -29,7 +29,6 @@ public class SpringDataApplication implements CommandLineRunner {
      * injetar isso.
      */
 
-
     public SpringDataApplication(CargoService cargoService,
                                  FuncionarioService funcionarioService,
                                  UnidadeTrabalhoService unidadeTrabalhoService,

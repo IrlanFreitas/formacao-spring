@@ -19,6 +19,7 @@ public class Topico {
 	private StatusTopico status = StatusTopico.NAO_RESPONDIDO;
 
 	// ? Um autor tem vários tópicos
+	// ? Porém um tópico só tem um autor
 	@ManyToOne
 	private Usuario autor;
 
@@ -34,6 +35,7 @@ public class Topico {
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
+	// ? Construtor vazio necessário para o JPA
 	public Topico() {
 	}
 

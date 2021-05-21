@@ -1,0 +1,10 @@
+Maven
+
+	Processo de build em uma aplicação Java
+	Gerenciamento de dependências em uma aplicação Java
+	Maven
+		Instalação
+		Criação de projeto / estrutura de diretórios / pom.xml
+		Gerenciamento de dependências
+		Processo de build com Maven
+		Plugins, módulos, etc

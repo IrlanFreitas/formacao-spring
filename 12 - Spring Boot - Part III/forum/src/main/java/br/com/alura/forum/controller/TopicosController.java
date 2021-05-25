@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.annotation.security.RolesAllowed;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
@@ -74,7 +75,6 @@ public class TopicosController {
     // * @RequestMapping(method = RequestMethod.POST)
     @PostMapping
     // * Obtendo o dado do corpo da requisição
-
     // * Usando o ResponseEntity para devolver uma resposta
     // * no padrão correto de uma api rest de quando o recurso
     // * foi criado.
@@ -115,7 +115,6 @@ public class TopicosController {
     }
 
     @PutMapping("/{id}")
-
     // ? Avisar ao Spring para comitar quando finalizar o método
     // ? Salvar, alterar e excluir devem ter
     @Transactional
@@ -149,6 +148,8 @@ public class TopicosController {
     // ? Estejam sempre atualizados
     // ? com o allEntries, limpando todos os registros
     @CacheEvict(value = "listaDeTopicos", allEntries = true)
+
+//    @RolesAllowed({"Admin"})
     public ResponseEntity<?> deletar(@PathVariable Long id) {
 
         Optional<Topico> optional = topicoRepository.findById(id);

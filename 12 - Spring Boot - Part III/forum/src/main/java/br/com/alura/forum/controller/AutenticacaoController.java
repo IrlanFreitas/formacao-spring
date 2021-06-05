@@ -19,7 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@Profile("prod")
+@Profile({"prod", "test"})
 public class AutenticacaoController {
 
     // ! Essa classe precisa ser configurada no SecurityConfigurations

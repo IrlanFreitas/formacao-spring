@@ -2,6 +2,8 @@ package br.com.alura.forum;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -14,10 +16,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableCaching
 // ! Para habilitar o swagger no projeto
 @EnableSwagger2
-public class ForumApplication {
+
+// ! o SpringBootServletInitializer junto com o pom
+// ! modificado para o packaging ser o war e o tomcat
+// ! desabilitadas no empacotamento
+public class ForumApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumApplication.class, args);
 	}
 
+	// ! Método que é necessário sobrescrever para que o empacotamento
+	// ! como war, funcione.
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(ForumApplication.class);
+	}
 }

@@ -1,0 +1,3 @@
+Para rodar o docker com profile e variáveis de ambiente como se fosse em produção.
+
+docker run -p 8080:8080 -e FORUM_DATABASE_URL='jdbc:h2:mem:alura-forum' -e SPRING_PROFILES_ACTIVE='prod' -e FORUM_DATABASE_USERNAME='sa' -e FORUM_DATABASE_PASSWORD='' -e FORUM_JWT_SECRET='123456' alura/forum
